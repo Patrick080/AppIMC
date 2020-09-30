@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIMC.MainPage"
+             Title="Calculo do IMC"
+             >
+
+    <StackLayout Padding="5"
+                 Orientation="Vertical"
+                 BackgroundColor="#999"
+                 >
+        
+        <Label Text="CALCULE SEU ÍNDICE DE MASSA CORPORAL" 
+               FontSize="Large"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               FontAttributes="Bold"
+               TextColor="White"
+                              />
+        <StackLayout BackgroundColor="#EEE" Padding="10">
+            <Label Text="Qual a sua altura?"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <Entry x:Name="txt_altura"
+                   Keyboard="Numeric"
+                   HorizontalOptions="Center"
+                   TextColor="Red"
+                   FontAttributes="Bold"/>
+            
+            <Label Text="Qual o seu peso?"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            
+            <Entry x:Name="txt_peso"
+                   Keyboard="Numeric"
+                   HorizontalOptions="Center"
+                   TextColor="Red"
+                   FontAttributes="Bold"/>
+            
+            <Button Text="Calcular" Clicked="Button_Clicked"/>
+
+            <Label x:Name="resultado"
+                   Text="Resultado"
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            <Label Text="Valores de Referência:"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   Margin="5"/>
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <TextCell TextColor="#000" Text="Entre 17 e 18,49 = Abaixo do peso"></TextCell>
+                        <TextCell TextColor="#000" Text="Entre 18,5 e 24,99 = Peso normal"></TextCell>
+                        <TextCell TextColor="#000" Text="Entre 25 e 29,99 = Acima do peso"></TextCell>
+                        <TextCell TextColor="#000" Text="Entre 30 e 34,99 = Obesidade I"></TextCell>
+                        <TextCell TextColor="#000" Text="Entre 35 e 39,99 = Obesidade II (severa)"></TextCell>
+                        <TextCell TextColor="#000" Text="Acima de 40 = Obesidade III (morbida)"></TextCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
